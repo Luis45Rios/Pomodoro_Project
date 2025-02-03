@@ -16,21 +16,23 @@ import Modelos.TareaTableModel;
 import Modelos.Usuario;
 
 /**
- * 
+ *
  * @author domenica
  */
-
 public class Frm_PaginaInicio extends javax.swing.JFrame {
-        private Usuario usuario;
-        private static TareaController tareaController = new TareaController();
 
-        /**
-         * Creates new form frm_pagInicio
-         */
-        public Frm_PaginaInicio(Usuario usuario) {
-                this.usuario = usuario;
-                initComponents();
-        }
+    private Usuario usuario;
+    private static TareaController tareaController = new TareaController();
+
+    /**
+     * Creates new form frm_pagInicio
+     *
+     * @param usuario
+     */
+    public Frm_PaginaInicio(Usuario usuario) {
+        this.usuario = usuario;
+        initComponents();
+    }
 
     /**
      * Creates new form Frm_PaginaInicio
@@ -53,6 +55,7 @@ public class Frm_PaginaInicio extends javax.swing.JFrame {
         jLabelNombreUsuario = new javax.swing.JLabel();
         jButtonNuevaTarea = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
+
         jTableResumen = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,6 +78,7 @@ public class Frm_PaginaInicio extends javax.swing.JFrame {
         jButtonNuevaTarea.setText("Nueva Tarea ");
         jButtonNuevaTarea.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(254, 254, 254), null, null));
 
+
         jTableResumen.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -88,6 +92,7 @@ public class Frm_PaginaInicio extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
+
                 "Nombre", "Nro. Pomodoros", "Opciones"
             }
         ));
@@ -96,6 +101,7 @@ public class Frm_PaginaInicio extends javax.swing.JFrame {
             jTableResumen.getColumnModel().getColumn(0).setResizable(false);
             jTableResumen.getColumnModel().getColumn(1).setResizable(false);
             jTableResumen.getColumnModel().getColumn(2).setResizable(false);
+
         }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -107,6 +113,7 @@ public class Frm_PaginaInicio extends javax.swing.JFrame {
                 .addComponent(jLabelNombreUsuario)
                 .addGap(114, 114, 114))
             .addGroup(jPanel1Layout.createSequentialGroup()
+
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButtonNuevaTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,6 +133,7 @@ public class Frm_PaginaInicio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelNombreUsuario)
                 .addGap(18, 18, 18)
+
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(jButtonNuevaTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -146,100 +154,95 @@ public class Frm_PaginaInicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-        private void jButtonNuevaTareaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonNuevaTareaActionPerformed
-                Frm_CrearTarea frm = new Frm_CrearTarea(this, rootPaneCheckingEnabled, usuario);
-                setVisible(false);
-                frm.setVisible(true);
-        }// GEN-LAST:event_jButtonNuevaTareaActionPerformed
+    private void jButtonNuevaTareaActionPerformed(java.awt.event.ActionEvent evt) {
+        Frm_CrearTarea frm = new Frm_CrearTarea(this, rootPaneCheckingEnabled, usuario);
+        setVisible(false);
+        frm.setVisible(true);
+    }
 
-        /**
-         * @param args the command line arguments
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+        // (optional) ">
+        /*
+                 * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+                 * look and feel.
+                 * For details see
+                 * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
-        public static void main(String args[]) {
-   
-                try {
-                        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager
-                                        .getInstalledLookAndFeels()) {
-                                if ("Nimbus".equals(info.getName())) {
-                                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                                        break;
-                                }
-                        }
-                } catch (ClassNotFoundException ex) {
-                        java.util.logging.Logger.getLogger(Frm_PaginaInicio.class.getName()).log(
-                                        java.util.logging.Level.SEVERE, null,
-                                        ex);
-                } catch (InstantiationException ex) {
-                        java.util.logging.Logger.getLogger(Frm_PaginaInicio.class.getName()).log(
-                                        java.util.logging.Level.SEVERE, null,
-                                        ex);
-                } catch (IllegalAccessException ex) {
-                        java.util.logging.Logger.getLogger(Frm_PaginaInicio.class.getName()).log(
-                                        java.util.logging.Level.SEVERE, null,
-                                        ex);
-                } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                        java.util.logging.Logger.getLogger(Frm_PaginaInicio.class.getName()).log(
-                                        java.util.logging.Level.SEVERE, null,
-                                        ex);
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager
+                    .getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
                 }
-
-                /* Create and display the form */
-                java.awt.EventQueue.invokeLater(new Runnable() {
-                        public void run() {
-                                new Frm_PaginaInicio(null).setVisible(true);
-                        }
-                });
+            }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Frm_PaginaInicio.class.getName()).log(
+                    java.util.logging.Level.SEVERE, null,
+                    ex);
         }
-
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> {
+            new Frm_PaginaInicio(null).setVisible(true);
+        });
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonNuevaTarea;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelNombreUsuario;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+
     private javax.swing.JTable jTableResumen;
     // End of variables declaration//GEN-END:variables
-        
-        static class ButtonRenderer extends JButton implements TableCellRenderer {
-                public ButtonRenderer() {
-                        setText("Eliminar");
-                }
 
-                @Override
-                public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
-                                boolean hasFocus, int row, int column) {
-                        return this;
-                }
+    static class ButtonRenderer extends JButton implements TableCellRenderer {
 
+        public ButtonRenderer() {
+            setText("Eliminar");
         }
 
-        static class ButtonEditor extends DefaultCellEditor {
-                private final JButton button;
-                private final TareaTableModel model;
-                private int row;
-
-                public ButtonEditor(TareaTableModel model) {
-                        super(new JTextField());
-                        this.model = model;
-                        button = new JButton("Eliminar");
-                        button.addActionListener(e -> {
-                                if (JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar la tarea?",
-                                                "Eliminar tarea",
-                                                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-                                        Tarea tarea = this.model.getTarea(row);
-                                        tareaController.eliminarTarea(tarea.getId());
-                                        this.model.removeRow(row);
-
-                                }
-                        });
-                }
-
-                @Override
-                public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row,
-                                int column) {
-                        this.row = row;
-                        return button;
-                }
-
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
+                boolean hasFocus, int row, int column) {
+            return this;
         }
+
+    }
+
+    static class ButtonEditor extends DefaultCellEditor {
+
+        private final JButton button;
+        private final TareaTableModel model;
+        private int row;
+
+        public ButtonEditor(TareaTableModel model) {
+            super(new JTextField());
+            this.model = model;
+            button = new JButton("Eliminar");
+            button.addActionListener(e -> {
+                if (JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar la tarea?",
+                        "Eliminar tarea",
+                        JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+                    Tarea tarea = this.model.getTarea(row);
+                    tareaController.eliminarTarea(tarea.getId());
+                    this.model.removeRow(row);
+
+                }
+            });
+        }
+
+        @Override
+        public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row,
+                int column) {
+            this.row = row;
+            return button;
+        }
+
+    }
 }
