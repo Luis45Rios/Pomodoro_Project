@@ -5,6 +5,8 @@
  */
 package Servicios;
 
+import Modelos.Usuario;
+
 /**
  *
  * @author luisr

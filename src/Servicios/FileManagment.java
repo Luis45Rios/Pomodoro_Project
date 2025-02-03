@@ -15,7 +15,7 @@ import java.util.List;
  * @author domenica
  */
 
-public class FileManagement {
+public class FileManagment {
     public static void createFile(String pathname) {
         File file = new File(pathname);
         try {

@@ -5,17 +5,40 @@
  */
 package Tareas;
 
+import javax.swing.JOptionPane;
+
+import Controlador.TareaController;
+import Modelos.Tarea;
+import Modelos.Usuario;
+import Temporizador.Frm_Pomodoro;
+
 /**
  *
  * @author luisr
  */
-public class Frm_CrearTarea extends javax.swing.JFrame {
+public class Frm_CrearTarea extends javax.swing.JDialog {
 
+    private Usuario usuario;
+    
     /**
      * Creates new form Frm_CrearTarea
      */
-    public Frm_CrearTarea() {
+    public Frm_CrearTarea(java.awt.Frame parent, boolean modal, Usuario usuario) {
+        super(parent, modal);
+        this.usuario = usuario;
         initComponents();
+    }
+
+    
+    private Integer getTiempoEnfoque() {
+        Integer tiempoEnfoque = 0;
+        if (btnEnfoque25.isSelected()) {
+            tiempoEnfoque = 25;
+        } else if (btnEnfoque50.isSelected()) {
+            tiempoEnfoque = 50;
+        }
+
+        return tiempoEnfoque;
     }
 
     /**
@@ -149,6 +172,36 @@ public class Frm_CrearTarea extends javax.swing.JFrame {
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
         // TODO add your handling code here:
+        String nombre = txtNombreTarea.getText().trim();
+        Integer tiempoEnfoque = getTiempoEnfoque();
+
+        if (usuario == null) {
+            JOptionPane.showMessageDialog(this, "No se ha iniciado sesión", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (nombre.isEmpty() || tiempoEnfoque == 0) {
+            JOptionPane.showMessageDialog(this,
+                    "Por favor, ingrese el nombre de la tarea y seleccione el tiempo de enfoque",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        Integer numeroPomodoros = 0;
+        String username = usuario.getUsername();
+
+        TareaController tareaController = new TareaController();
+
+        try {
+            Tarea tarea = tareaController.crearTarea(nombre, tiempoEnfoque, numeroPomodoros, username);
+            Frm_Pomodoro pomodoro = new Frm_Pomodoro(tarea);
+            pomodoro.setVisible(true);
+            this.dispose();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ha ocurrido un error inesperado. Intente de nuevo.",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     /**
@@ -167,22 +220,24 @@ public class Frm_CrearTarea extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frm_CrearTarea.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frm_CrearTarea.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frm_CrearTarea.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Frm_CrearTarea.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
+        //</editor-fold>
+        
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Frm_CrearTarea().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            Frm_CrearTarea dialog = new Frm_CrearTarea((Frm_PaginaInicio) new javax.swing.JFrame(), true, null);
+            dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                @Override
+                public void windowClosing(java.awt.event.WindowEvent e) {
+                    System.exit(0);
+                }
+            });
+            dialog.setVisible(true);
         });
     }
 

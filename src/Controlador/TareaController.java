@@ -3,7 +3,7 @@ package Controlador;
 import java.util.List;
 
 import Modelos.Tarea;
-import Servicios.TareaFileManagement;
+import Servicios.TareaFileManagment;
 
 /**
  * 
@@ -11,7 +11,7 @@ import Servicios.TareaFileManagement;
  */
 
 public class TareaController {
-    private final TareaFileManagement tareaService = new TareaFileManagement();
+    private final TareaFileManagment tareaService = new TareaFileManagment();
 
     public Tarea crearTarea(String nombre, Integer tiempoEnfoque, Integer numeroPomodoros, String username) {
         Integer id = tareaService.getTaskId();

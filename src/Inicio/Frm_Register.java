@@ -5,7 +5,6 @@
  */
 package Inicio;
 import Controlador.UsuarioController;
-import Servicios.UsuarioFileManagment;
 import javax.swing.JOptionPane;
 /**
  *
@@ -19,10 +18,7 @@ public class Frm_Register extends javax.swing.JFrame {
     public Frm_Register() {
         initComponents();
     }
-public void registrar(){
-    String usser = reguss_txt.getText();
-        String pasword = new String(regpassw_txt.getPassword());
-    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
