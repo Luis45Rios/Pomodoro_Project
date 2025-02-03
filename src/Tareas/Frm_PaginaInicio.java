@@ -38,10 +38,6 @@ public class Frm_PaginaInicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<<<<<<< HEAD
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-=======
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabelNombreUsuario = new javax.swing.JLabel();
@@ -132,7 +128,6 @@ public class Frm_PaginaInicio extends javax.swing.JFrame {
                 .addGap(28, 28, 28))
         );
 
->>>>>>> 15b15339b88b6b263d137ee192282ab6e3c9187a
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -172,16 +167,14 @@ public class Frm_PaginaInicio extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
-=======
+
     private javax.swing.JButton jButtonNuevaTarea;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelNombreUsuario;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-
     private javax.swing.JTable jTableResumen;
->>>>>>> 15b15339b88b6b263d137ee192282ab6e3c9187a
+
     // End of variables declaration//GEN-END:variables
 
     static class ButtonRenderer extends JButton implements TableCellRenderer {
