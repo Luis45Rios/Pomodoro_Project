@@ -38,8 +38,101 @@ public class Frm_PaginaInicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+=======
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabelNombreUsuario = new javax.swing.JLabel();
+        jButtonNuevaTarea = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+
+        jTableResumen = new javax.swing.JTable();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(209, 255, 184));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setPreferredSize(new java.awt.Dimension(750, 500));
+
+        jLabel1.setFont(new java.awt.Font("URW Bookman", 0, 60)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(55, 153, 22));
+        jLabel1.setText("Inicio");
+
+        jLabelNombreUsuario.setFont(new java.awt.Font("URW Gothic", 0, 50)); // NOI18N
+        jLabelNombreUsuario.setForeground(new java.awt.Color(1, 1, 1));
+        jLabelNombreUsuario.setText("Bienvenido (Usuario) ");
+
+        jButtonNuevaTarea.setBackground(new java.awt.Color(55, 153, 22));
+        jButtonNuevaTarea.setFont(new java.awt.Font("URW Gothic", 0, 18)); // NOI18N
+        jButtonNuevaTarea.setForeground(new java.awt.Color(1, 1, 1));
+        jButtonNuevaTarea.setText("Nueva Tarea ");
+        jButtonNuevaTarea.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(254, 254, 254), null, null));
+
+
+        jTableResumen.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+
+                "Nombre", "Nro. Pomodoros", "Opciones"
+            }
+        ));
+        jScrollPane1.setViewportView(jTableResumen);
+        if (jTableResumen.getColumnModel().getColumnCount() > 0) {
+            jTableResumen.getColumnModel().getColumn(0).setResizable(false);
+            jTableResumen.getColumnModel().getColumn(1).setResizable(false);
+            jTableResumen.getColumnModel().getColumn(2).setResizable(false);
+
+        }
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabelNombreUsuario)
+                .addGap(114, 114, 114))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButtonNuevaTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(288, 288, 288)
+                            .addComponent(jLabel1))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(63, 63, 63)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelNombreUsuario)
+                .addGap(18, 18, 18)
+
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(jButtonNuevaTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+        );
+
+>>>>>>> 15b15339b88b6b263d137ee192282ab6e3c9187a
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,6 +172,16 @@ public class Frm_PaginaInicio extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
+=======
+    private javax.swing.JButton jButtonNuevaTarea;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelNombreUsuario;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+
+    private javax.swing.JTable jTableResumen;
+>>>>>>> 15b15339b88b6b263d137ee192282ab6e3c9187a
     // End of variables declaration//GEN-END:variables
 
     static class ButtonRenderer extends JButton implements TableCellRenderer {
